@@ -103,6 +103,14 @@ label.f input:focus,label.f select:focus{outline:none;border-color:var(--gold);b
 .done{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
 .done h3{margin:0;font-family:'Anton',sans-serif;font-weight:400;font-size:40px;line-height:1}
 .done p{margin:0;color:#C9C9C9;line-height:1.6}
+.pay h3{margin:0;font-family:'Anton',sans-serif;font-weight:400;font-size:34px;line-height:1.05}
+.steps{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;counter-reset:s}
+.steps li{display:flex;gap:12px;align-items:center;font-size:15px;color:#D0D0D0;counter-increment:s}
+.steps li::before{content:counter(s);flex:0 0 28px;height:28px;border-radius:50%;background:var(--gold);color:var(--ink);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+.rzp{padding:20px;border-radius:16px;background:var(--ink);border:1px dashed #3A3A3A;display:flex;justify-content:center;min-height:80px;align-items:center}
+.rzp form{margin:0}
+.note{margin:0;font-size:13px;line-height:1.6;color:#8C8C8C}
+.note a{color:var(--gold)}
 /* faq */
 details{border-bottom:1px solid var(--line);padding:18px 0}
 summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
@@ -232,25 +240,18 @@ footer{border-top:1px dashed #2E2E2E;padding:24px 0;font-size:12px;color:#8C8C8C
 </ul>
 <span id="seats-card" style="margin-top:auto;font-weight:700">Only 10 seats in this batch</span>
 </div>
-<form class="form" id="diwali-form" novalidate>
-<input type="hidden" name="_subject" value="Diwali workshop registration – AI for Passive Income (7 Nov)">
-<input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-<div class="row">
-<label class="f"><span>Full name *</span><input name="Name" required autocomplete="name"></label>
-<label class="f"><span>WhatsApp number *</span><input name="WhatsApp" type="tel" required autocomplete="tel" placeholder="+91"></label>
+<div class="form pay" id="pay-box">
+<span class="kicker">PAY &amp; RESERVE IN ONE STEP</span>
+<h3>YOUR SEAT IS CONFIRMED THE MOMENT YOU PAY</h3>
+<ol class="steps">
+<li><span>Tap <b>Reserve My Seat</b> below</span></li>
+<li>Enter your name, email and WhatsApp number</li>
+<li>Pay ₹299 by UPI, card or net banking</li>
+</ol>
+<div class="rzp" id="rzp-slot"><form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TuCRYGZaX5U4Cm" async></script></form></div>
+<p class="note">Secure payment by Razorpay. Only 10 seats: once they're taken, the button closes automatically. Your joining link is sent on WhatsApp and email before the session.</p>
+<p class="note">Trouble paying? <a id="pay-help" href="https://wa.me/918056327917" target="_blank" rel="noopener">Message me on WhatsApp</a>.</p>
 </div>
-<div class="row">
-<label class="f"><span>Email *</span><input name="email" type="email" required autocomplete="email"></label>
-<label class="f"><span>I am a *</span><select name="I am a" required><option value="">Choose one</option><option>Student</option><option>Homemaker</option><option>Working professional</option><option>Small business owner</option><option>Other</option></select></label>
-</div>
-<div class="row">
-<label class="f"><span>Preferred language</span><select name="Language"><option>Tamil + English</option><option>English</option><option>Tamil</option></select></label>
-<label class="f"><span>How did you hear about this?</span><select name="Source"><option>Instagram</option><option>WhatsApp</option><option>Friend or family</option><option>Website</option><option>Other</option></select></label>
-</div>
-<button class="btn btn-gold" type="submit" id="reg-btn">Register for ₹299 ↗</button>
-<p class="status" id="reg-status" role="status" aria-live="polite"></p>
-<p style="margin:0;font-size:13px;color:#8C8C8C">After you register, you'll get the payment link and the session link on WhatsApp. Your seat is confirmed once payment is received.</p>
-</form>
 </div>
 </section>
 
@@ -259,7 +260,7 @@ footer{border-top:1px dashed #2E2E2E;padding:24px 0;font-size:12px;color:#8C8C8C
 <details><summary>Do I need to buy any software?</summary><p>No. Everything shown in the session uses free plans of AI tools. You only need a phone or laptop and an internet connection.</p></details>
 <details><summary>I'm not technical. Will I understand?</summary><p>Yes. The workshop is built for non-tech people. Every step is shown live and explained in simple Tamil and English.</p></details>
 <details><summary>Is income guaranteed?</summary><p>No, and nobody honest can promise that. You'll learn proven ideas and a clear plan; what you earn depends on the effort you put in after the session.</p></details>
-<details><summary>How will I join?</summary><p>It's an online session. The joining link is shared on WhatsApp after your payment is confirmed.</p></details>
+<details><summary>How will I join?</summary><p>It's an online session. After you pay, you'll get a Razorpay receipt by email, and the joining link is shared on WhatsApp and email before the session.</p></details>
 <details><summary>Why only 10 seats?</summary><p>So that I can answer every question live and help each person pick their first idea.</p></details>
 </section>
 </main>
@@ -276,10 +277,10 @@ footer{border-top:1px dashed #2E2E2E;padding:24px 0;font-size:12px;color:#8C8C8C
   /* ===== Edit these when needed ===== */
   var EVENT_START = new Date('2026-11-07T19:00:00+05:30');
   var SEATS_LEFT = 10;          // update manually as seats fill up
-  var PAYMENT_URL = '';         // paste a Razorpay / UPI payment link here to show a "Pay ₹299 now" button
-  var EMAIL_ENDPOINT = 'https://formsubmit.co/ajax/chanakian.p@gmail.com';
-  var WHATSAPP = '918056327917';
+var WHATSAPP = '918056327917';
+  /* Payment: Razorpay Payment Button pl_TuCRYGZaX5U4Cm (stock 10). After payment Razorpay redirects to diwali.html?paid=1 */
   /* ================================== */
+  var PAID = /[?&]paid=1/.test(location.search);
 
   // string lights
   var lights = document.getElementById('lights');
@@ -289,7 +290,7 @@ footer{border-top:1px dashed #2E2E2E;padding:24px 0;font-size:12px;color:#8C8C8C
   // seats
   var seatsText = SEATS_LEFT <= 0 ? '<b>Batch full</b> · join the waitlist' : (SEATS_LEFT < 10 ? 'Only <b>' + SEATS_LEFT + '</b> of 10 seats left' : '<b>10</b> seats in this batch');
   document.getElementById('seats-text').innerHTML = seatsText;
-  if (SEATS_LEFT < 10) document.getElementById('seats-card').textContent = SEATS_LEFT <= 0 ? 'Batch full: register to join the waitlist' : 'Only ' + SEATS_LEFT + ' of 10 seats left';
+  if (SEATS_LEFT < 10) document.getElementById('seats-card').textContent = SEATS_LEFT <= 0 ? 'Batch full: message me to join the waitlist' : 'Only ' + SEATS_LEFT + ' of 10 seats left';
 
   // countdown
   function pad(x) { return (x < 10 ? '0' : '') + x; }
@@ -297,7 +298,7 @@ footer{border-top:1px dashed #2E2E2E;padding:24px 0;font-size:12px;color:#8C8C8C
     var ms = EVENT_START - new Date();
     if (ms <= 0) {
       document.querySelector('.count').innerHTML = '<div style="min-width:auto;padding:12px 18px"><strong style="font-size:22px">REGISTRATIONS CLOSED</strong><small>WATCH FOR THE NEXT BATCH</small></div>';
-      var btn = document.getElementById('reg-btn'); btn.disabled = true; btn.textContent = 'Registrations closed';
+      if (!PAID) document.getElementById('rzp-slot').innerHTML = '<strong>Registrations closed</strong>';
       clearInterval(t); return;
     }
     var sec = Math.floor(ms / 1000);
@@ -308,33 +309,17 @@ footer{border-top:1px dashed #2E2E2E;padding:24px 0;font-size:12px;color:#8C8C8C
   }
   var t = setInterval(tick, 1000); tick();
 
-  // registration
-  var form = document.getElementById('diwali-form');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var status = document.getElementById('reg-status');
-    status.classList.remove('err');
-    if (!form.checkValidity()) { form.reportValidity(); status.textContent = 'Please fill in the fields marked *.'; status.classList.add('err'); return; }
-    var data = {};
-    new FormData(form).forEach(function (v, k) { data[k] = v; });
-    data._template = 'table'; data._captcha = 'false';
-    var btn = document.getElementById('reg-btn'); btn.disabled = true; btn.textContent = 'Registering…';
-    fetch(EMAIL_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
-      .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === 'false') throw new Error('fail'); }); })
-      .then(function () {
-        var name = (data.Name || '').split(' ')[0].replace(/[<>&"]/g, '');
-        var msg = encodeURIComponent('Hi Chanakian! I just registered for the Diwali workshop "AI for Passive Income" on 7 Nov, 7–8 PM. Name: ' + data.Name + '. Please share the payment link for ₹299.');
-        var pay = PAYMENT_URL ? '<a class="btn btn-gold" href="' + PAYMENT_URL + '" target="_blank" rel="noopener">Pay ₹299 now</a>' : '';
-        form.innerHTML = '<div class="done"><span class="kicker">YOU\'RE ON THE LIST</span><h3>THANK YOU' + (name ? ', ' + name.toUpperCase() : '') + '!</h3>' +
-          '<p>Your registration has reached Chanakian. To confirm your seat, complete the ₹299 payment. Chanakian will be in touch with you shortly on WhatsApp with the payment and session links.</p>' +
-          '<div class="cta-row">' + pay + '<a class="btn ' + (PAYMENT_URL ? 'btn-line' : 'btn-gold') + '" href="https://wa.me/' + WHATSAPP + '?text=' + msg + '" target="_blank" rel="noopener">Confirm on WhatsApp</a></div></div>';
-      })
-      .catch(function () {
-        btn.disabled = false; btn.textContent = 'Register for ₹299 ↗';
-        status.innerHTML = 'Something went wrong. Please try again or <a href="https://wa.me/' + WHATSAPP + '" target="_blank" rel="noopener" style="color:#FF8A8E">message me on WhatsApp</a>.';
-        status.classList.add('err');
-      });
-  });
+  // payment help link
+  document.getElementById('pay-help').href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent('Hi Chanakian! I want to join the Diwali workshop on 7 Nov, 7–8 PM, but I had trouble paying ₹299 on the website.');
+
+  // after payment: Razorpay sends the buyer back to diwali.html?paid=1
+  if (PAID) {
+    var msg = encodeURIComponent('Hi Chanakian! I just paid ₹299 for the Diwali workshop "AI for Passive Income" on 7 Nov, 7–8 PM. My name is ');
+    document.getElementById('pay-box').innerHTML = '<div class="done"><span class="kicker">PAYMENT RECEIVED</span><h3>YOUR SEAT IS CONFIRMED! 🪔</h3>' +
+      '<p>Thank you for joining the Diwali workshop on Sat, 7 Nov, 7–8 PM IST. Your Razorpay receipt is on its way to your email. The joining link will reach you on WhatsApp and email before the session.</p>' +
+      '<div class="cta-row"><a class="btn btn-gold" href="https://wa.me/' + WHATSAPP + '?text=' + msg + '" target="_blank" rel="noopener">Say hi on WhatsApp</a></div></div>';
+    setTimeout(function () { document.getElementById('register').scrollIntoView({ behavior: 'smooth' }); }, 300);
+  }
 })();
 </script>
 </body>

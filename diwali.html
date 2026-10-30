@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diwali Workshop: AI for Passive Income – AI with Chanakian</title>
+<meta name="description" content="Live online workshop on Sat 7 Nov, 7–8 PM IST. Learn how to start a passive income with free AI tools, without spending a rupee. ₹299. Only 10 seats.">
+<meta property="og:title" content="Light up a second income this Diwali – AI with Chanakian">
+<meta property="og:description" content="1-hour live online workshop · Sat 7 Nov, 7–8 PM IST · ₹299 · Only 10 seats">
+<meta property="og:image" content="chanakian.png">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0A0A0A;--panel:#141414;--line:#262626;--paper:#F5F5F5;--muted:#B5B5B5;--red:#E3262E;--gold:#F5B301;--marigold:#FF8A1F}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:'Inter',system-ui,sans-serif}
+a{color:var(--gold)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.display{font-family:'Anton','Impact',sans-serif;font-weight:400;line-height:.95;margin:0}
+.kicker{font-size:12px;font-weight:700;letter-spacing:3px;color:var(--gold)}
+/* string lights */
+.lights{display:flex;justify-content:space-between;padding:10px 12px 0;overflow:hidden;height:34px}
+.lights span{width:10px;height:14px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:var(--gold);box-shadow:0 0 10px 2px rgba(245,179,1,.7);animation:twinkle 1.8s ease-in-out infinite;flex:none;position:relative;top:var(--y,0)}
+.lights span:nth-child(3n){background:var(--red);box-shadow:0 0 10px 2px rgba(227,38,46,.7);animation-delay:.6s}
+.lights span:nth-child(3n+1){background:var(--marigold);box-shadow:0 0 10px 2px rgba(255,138,31,.7);animation-delay:1.2s}
+@keyframes twinkle{50%{opacity:.35}}
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:'Anton',sans-serif;font-size:18px;letter-spacing:1px}
+.brand span{white-space:nowrap}
+.brand b{font-weight:400;background:var(--paper);color:var(--ink);padding:4px 8px}
+.brand i{font-style:normal;background:var(--red);color:#fff;padding:4px 8px}
+.back{color:var(--muted);font-size:13px;font-weight:600;text-decoration:none}
+.back:hover{color:var(--paper)}
+/* hero */
+.hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;padding:28px 0 56px}
+.hero-text{flex:1 1 520px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.hero h1{font-size:clamp(52px,7.4vw,104px)}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.lead{margin:0;font-size:19px;line-height:1.55;color:#D6D6D6;max-width:600px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;border:1px solid #3A3A3A;font-size:13px;font-weight:600;letter-spacing:.5px}
+.chip.hot{background:var(--red);border-color:var(--red);color:#fff}
+.count{display:flex;gap:10px}
+.count div{min-width:74px;padding:12px 10px;border-radius:16px;background:var(--panel);border:1px solid var(--line);text-align:center}
+.count strong{display:block;font-family:'Anton',sans-serif;font-weight:400;font-size:36px;line-height:1;color:var(--paper)}
+.count small{font-size:11px;font-weight:700;letter-spacing:1.6px;color:var(--muted)}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:999px;border:none;font:700 16px 'Inter',sans-serif;text-decoration:none;cursor:pointer}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold:hover{background:#FFC42E}
+.btn-line{background:none;border:1px solid var(--paper);color:var(--paper)}
+.seats{font-size:14px;color:var(--muted)}
+.seats b{color:var(--paper)}
+/* hero visual */
+.hero-art{flex:1 1 360px;min-width:0;display:flex;justify-content:center}
+.stage{position:relative;width:min(420px,100%);aspect-ratio:4/5}
+.halo{position:absolute;left:50%;top:44%;width:86%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);background:var(--gold)}
+.ring{position:absolute;left:50%;top:44%;width:100%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);border:2px dashed rgba(245,179,1,.55);animation:spin 40s linear infinite}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.stage img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:100%;width:auto;max-width:none}
+.diya{position:absolute;right:-6px;bottom:18px;width:120px;filter:drop-shadow(0 0 22px rgba(255,170,30,.55))}
+.flame{transform-origin:60px 58px;animation:flicker 1.4s ease-in-out infinite}
+@keyframes flicker{0%,100%{transform:scale(1) rotate(-2deg)}50%{transform:scale(1.08,.94) rotate(3deg)}}
+/* sections */
+section.block{border-top:1px solid #1E1E1E;padding:72px 0}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:32px}
+.head h2{font-size:clamp(40px,5.4vw,76px)}
+.head h2 span{color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{border-radius:20px;background:var(--panel);border:1px solid var(--line);padding:26px;display:flex;flex-direction:column;gap:10px}
+.card .n{font-family:'Anton',sans-serif;font-size:34px;color:var(--gold);line-height:1}
+.card h3{margin:0;font-size:19px}
+.card p{margin:0;font-size:15px;line-height:1.55;color:#A8A8A8}
+.for{display:flex;flex-wrap:wrap;gap:12px}
+.for span{padding:14px 20px;border-radius:16px;background:var(--panel);border:1px solid var(--line);font-weight:600}
+.free{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.free div{border-left:3px solid var(--gold);padding:6px 0 6px 18px}
+.free b{display:block;font-size:18px;margin-bottom:6px}
+.free span{color:#A8A8A8;font-size:15px;line-height:1.5}
+.host{display:flex;flex-wrap:wrap;gap:32px;align-items:center}
+.host img{width:160px;height:160px;object-fit:cover;object-position:center top;border-radius:50%;background:var(--red)}
+.host div{flex:1 1 420px;min-width:0}
+.host p{margin:8px 0 0;font-size:17px;line-height:1.6;color:#C9C9C9}
+/* register */
+.reg{display:flex;flex-wrap:wrap;gap:24px;align-items:stretch}
+.price{flex:1 1 300px;border-radius:24px;background:var(--gold);color:var(--ink);padding:32px;display:flex;flex-direction:column;gap:12px}
+.price .amt{font-family:'Anton',sans-serif;font-size:84px;line-height:.9}
+.price ul{margin:6px 0 0;padding-left:18px;line-height:1.8;font-weight:500}
+.form{flex:2 1 460px;border-radius:24px;background:var(--panel);border:1px solid var(--line);padding:32px;display:flex;flex-direction:column;gap:16px}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+label.f{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:#D0D0D0}
+label.f input,label.f select{font:400 15px 'Inter',sans-serif;color:var(--paper);background:var(--ink);border:1px solid #333;border-radius:12px;padding:12px 14px;min-height:48px;width:100%}
+label.f input:focus,label.f select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,179,1,.25)}
+.status{margin:0;min-height:20px;font-size:14px;color:var(--muted)}
+.status.err{color:#FF8A8E}
+.hp{position:absolute;left:-9999px}
+.done{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.done h3{margin:0;font-family:'Anton',sans-serif;font-weight:400;font-size:40px;line-height:1}
+.done p{margin:0;color:#C9C9C9;line-height:1.6}
+/* faq */
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:'+';color:var(--gold);font-size:22px;line-height:1}
+details[open] summary::after{content:'–'}
+details p{margin:10px 0 0;color:#A8A8A8;line-height:1.6}
+footer{border-top:1px dashed #2E2E2E;padding:24px 0;font-size:12px;color:#8C8C8C;line-height:1.6}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:none;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;background:#111;border-top:1px solid #2A2A2A}
+.sticky span{font-size:13px;font-weight:600}
+@media (max-width:760px){.brand{font-size:15px}.back{font-size:12px}.sticky{display:flex}body{padding-bottom:76px}.count div{min-width:64px}.count strong{font-size:28px}.diya{width:92px}}
+@media (prefers-reduced-motion:reduce){.lights span,.ring,.flame{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="lights" aria-hidden="true" id="lights"></div>
+
+<div class="wrap">
+<header class="top">
+<a class="brand" href="/" aria-label="AI with Chanakian home">
+<svg aria-hidden="true" width="32" height="32" viewBox="0 0 512 512"><circle cx="256" cy="256" r="256" fill="#E3262E"/><path d="M335.2 176.8 A112 112 0 1 0 335.2 335.2" fill="none" stroke="#FFFFFF" stroke-width="58"/><path d="M352 206 Q358 250 400 256 Q358 262 352 306 Q346 262 304 256 Q346 250 352 206 Z" fill="#FFFFFF"/></svg>
+<span><b>AI WITH</b><i>CHANAKIAN</i></span>
+</a>
+<a class="back" href="/">← Back to main site</a>
+</header>
+
+<main>
+<section class="hero">
+<div class="hero-text">
+<span class="kicker">DIWALI SPECIAL · LIVE ONLINE WORKSHOP</span>
+<h1 class="display">LIGHT UP A <em>SECOND INCOME</em> THIS DIWALI</h1>
+<p class="lead">Before the lamps are lit, learn how to start a passive income with <strong>free AI tools</strong>, without spending a single rupee on software. One focused hour, explained simply, in Tamil and English.</p>
+<div class="chips">
+<span class="chip">SAT, 7 NOV 2026</span>
+<span class="chip">7:00 – 8:00 PM IST</span>
+<span class="chip">LIVE ONLINE</span>
+<span class="chip hot">ONLY 10 SEATS</span>
+</div>
+<div class="count" role="timer" aria-label="Time left until the workshop starts">
+<div><strong id="cd-d">--</strong><small>DAYS</small></div>
+<div><strong id="cd-h">--</strong><small>HOURS</small></div>
+<div><strong id="cd-m">--</strong><small>MINS</small></div>
+<div><strong id="cd-s">--</strong><small>SECS</small></div>
+</div>
+<div class="cta-row">
+<a class="btn btn-gold" href="#register">Reserve my seat · ₹299</a>
+<span class="seats" id="seats-text"><b>10</b> seats in this batch</span>
+</div>
+</div>
+<div class="hero-art">
+<div class="stage">
+<div class="ring" aria-hidden="true"></div>
+<div class="halo" aria-hidden="true"></div>
+<img src="chanakian.png" alt="Chanakian, your workshop host">
+<svg class="diya" viewBox="0 0 120 110" aria-hidden="true">
+<g class="flame"><path d="M60 8 C72 26 74 40 60 58 C46 40 48 26 60 8 Z" fill="#FFC42E"/><path d="M60 26 C66 36 66 44 60 54 C54 44 54 36 60 26 Z" fill="#FFF3C4"/></g>
+<path d="M8 66 Q60 58 112 66 Q104 100 60 102 Q16 100 8 66 Z" fill="#E3262E"/>
+<path d="M8 66 Q60 74 112 66" fill="none" stroke="#F5B301" stroke-width="5"/>
+<circle cx="34" cy="84" r="4" fill="#F5B301"/><circle cx="60" cy="88" r="4" fill="#F5B301"/><circle cx="86" cy="84" r="4" fill="#F5B301"/>
+</svg>
+</div>
+</div>
+</section>
+
+<section class="block" id="learn">
+<div class="head">
+<h2 class="display">WHAT YOU'LL <span>LEARN</span> IN 60 MINUTES</h2>
+<span class="kicker">THE PLAN</span>
+</div>
+<div class="grid">
+<div class="card"><span class="n">01</span><h3>5 passive-income ideas for beginners</h3><p>Digital products, templates, content pages and small AI services that ordinary people are starting from their phones.</p></div>
+<div class="card"><span class="n">02</span><h3>The free AI toolkit</h3><p>Which free AI tools to use for writing, design, images and video, and how to use them without paying for anything.</p></div>
+<div class="card"><span class="n">03</span><h3>Live demo: build a product in 15 minutes</h3><p>Watch me create a sellable digital product from scratch using only free AI tools.</p></div>
+<div class="card"><span class="n">04</span><h3>Where and how to sell it</h3><p>Use Instagram, WhatsApp and free online storefronts to reach your first buyers.</p></div>
+<div class="card"><span class="n">05</span><h3>Your 7-day launch plan</h3><p>A simple day-by-day plan to go from idea to first listing, plus live Q&amp;A.</p></div>
+</div>
+</section>
+
+<section class="block">
+<div class="head">
+<h2 class="display">WHO IS THIS <span>FOR?</span></h2>
+<span class="kicker">NO TECH SKILLS NEEDED</span>
+</div>
+<div class="for">
+<span>Students</span><span>Homemakers</span><span>Working professionals</span><span>Small business owners</span><span>Retired and second-career folks</span><span>Anyone curious about AI</span>
+</div>
+</section>
+
+<section class="block">
+<div class="head">
+<h2 class="display">ZERO RUPEES <span>ON TOOLS</span></h2>
+<span class="kicker">WHY FREE AI</span>
+</div>
+<div class="free">
+<div><b>No software to buy</b><span>Everything in the session works on free plans of popular AI tools.</span></div>
+<div><b>Just a phone or laptop</b><span>An internet connection and a free Google account are all you need.</span></div>
+<div><b>Start the same night</b><span>Leave with a clear first step you can take before Diwali morning.</span></div>
+</div>
+</section>
+
+<section class="block">
+<div class="host">
+<img src="chanakian.png" alt="Chanakian">
+<div>
+<span class="kicker">YOUR HOST</span>
+<h2 class="display" style="font-size:clamp(40px,5vw,64px);margin-top:8px">CHANAKIAN</h2>
+<p>AI strategist for non-tech people, with 10+ years in sales. I help employees make AI their coworker and small business owners make AI their co-founder, explained simply in Tamil and English.</p>
+</div>
+</div>
+</section>
+
+<section class="block" id="register">
+<div class="head">
+<h2 class="display">RESERVE YOUR <span>SEAT</span></h2>
+<span class="kicker">REGISTRATION</span>
+</div>
+<div class="reg">
+<div class="price">
+<span style="font-size:12px;font-weight:700;letter-spacing:3px">DIWALI WORKSHOP FEE</span>
+<span class="amt">₹299</span>
+<span style="font-weight:600">Sat, 7 Nov · 7–8 PM IST · Live online</span>
+<ul>
+<li>1-hour live session</li>
+<li>Free AI toolkit walkthrough</li>
+<li>7-day launch plan</li>
+<li>Live Q&amp;A with Chanakian</li>
+</ul>
+<span id="seats-card" style="margin-top:auto;font-weight:700">Only 10 seats in this batch</span>
+</div>
+<form class="form" id="diwali-form" novalidate>
+<input type="hidden" name="_subject" value="Diwali workshop registration – AI for Passive Income (7 Nov)">
+<input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div class="row">
+<label class="f"><span>Full name *</span><input name="Name" required autocomplete="name"></label>
+<label class="f"><span>WhatsApp number *</span><input name="WhatsApp" type="tel" required autocomplete="tel" placeholder="+91"></label>
+</div>
+<div class="row">
+<label class="f"><span>Email *</span><input name="email" type="email" required autocomplete="email"></label>
+<label class="f"><span>I am a *</span><select name="I am a" required><option value="">Choose one</option><option>Student</option><option>Homemaker</option><option>Working professional</option><option>Small business owner</option><option>Other</option></select></label>
+</div>
+<div class="row">
+<label class="f"><span>Preferred language</span><select name="Language"><option>Tamil + English</option><option>English</option><option>Tamil</option></select></label>
+<label class="f"><span>How did you hear about this?</span><select name="Source"><option>Instagram</option><option>WhatsApp</option><option>Friend or family</option><option>Website</option><option>Other</option></select></label>
+</div>
+<button class="btn btn-gold" type="submit" id="reg-btn">Register for ₹299 ↗</button>
+<p class="status" id="reg-status" role="status" aria-live="polite"></p>
+<p style="margin:0;font-size:13px;color:#8C8C8C">After you register, you'll get the payment link and the session link on WhatsApp. Your seat is confirmed once payment is received.</p>
+</form>
+</div>
+</section>
+
+<section class="block">
+<div class="head"><h2 class="display">QUESTIONS</h2><span class="kicker">FAQ</span></div>
+<details><summary>Do I need to buy any software?</summary><p>No. Everything shown in the session uses free plans of AI tools. You only need a phone or laptop and an internet connection.</p></details>
+<details><summary>I'm not technical. Will I understand?</summary><p>Yes. The workshop is built for non-tech people. Every step is shown live and explained in simple Tamil and English.</p></details>
+<details><summary>Is income guaranteed?</summary><p>No, and nobody honest can promise that. You'll learn proven ideas and a clear plan; what you earn depends on the effort you put in after the session.</p></details>
+<details><summary>How will I join?</summary><p>It's an online session. The joining link is shared on WhatsApp after your payment is confirmed.</p></details>
+<details><summary>Why only 10 seats?</summary><p>So that I can answer every question live and help each person pick their first idea.</p></details>
+</section>
+</main>
+
+<footer>
+© 2026 Chanakian · aiwithchanakian.com · Independent trainer, not affiliated with any AI company. Results depend on individual effort; no income is guaranteed.
+</footer>
+</div>
+
+<div class="sticky"><span>Diwali workshop · 7 Nov · ₹299</span><a class="btn btn-gold" style="height:44px;padding:0 18px;font-size:14px" href="#register">Reserve seat</a></div>
+
+<script>
+(function () {
+  /* ===== Edit these when needed ===== */
+  var EVENT_START = new Date('2026-11-07T19:00:00+05:30');
+  var SEATS_LEFT = 10;          // update manually as seats fill up
+  var PAYMENT_URL = '';         // paste a Razorpay / UPI payment link here to show a "Pay ₹299 now" button
+  var EMAIL_ENDPOINT = 'https://formsubmit.co/ajax/chanakian.p@gmail.com';
+  var WHATSAPP = '918056327917';
+  /* ================================== */
+
+  // string lights
+  var lights = document.getElementById('lights');
+  var n = Math.ceil(window.innerWidth / 26);
+  for (var i = 0; i < n; i++) { var s = document.createElement('span'); s.style.setProperty('--y', (Math.sin(i / 2) * 6 + 6).toFixed(1) + 'px'); lights.appendChild(s); }
+
+  // seats
+  var seatsText = SEATS_LEFT <= 0 ? '<b>Batch full</b> · join the waitlist' : (SEATS_LEFT < 10 ? 'Only <b>' + SEATS_LEFT + '</b> of 10 seats left' : '<b>10</b> seats in this batch');
+  document.getElementById('seats-text').innerHTML = seatsText;
+  if (SEATS_LEFT < 10) document.getElementById('seats-card').textContent = SEATS_LEFT <= 0 ? 'Batch full: register to join the waitlist' : 'Only ' + SEATS_LEFT + ' of 10 seats left';
+
+  // countdown
+  function pad(x) { return (x < 10 ? '0' : '') + x; }
+  function tick() {
+    var ms = EVENT_START - new Date();
+    if (ms <= 0) {
+      document.querySelector('.count').innerHTML = '<div style="min-width:auto;padding:12px 18px"><strong style="font-size:22px">REGISTRATIONS CLOSED</strong><small>WATCH FOR THE NEXT BATCH</small></div>';
+      var btn = document.getElementById('reg-btn'); btn.disabled = true; btn.textContent = 'Registrations closed';
+      clearInterval(t); return;
+    }
+    var sec = Math.floor(ms / 1000);
+    document.getElementById('cd-d').textContent = pad(Math.floor(sec / 86400));
+    document.getElementById('cd-h').textContent = pad(Math.floor(sec % 86400 / 3600));
+    document.getElementById('cd-m').textContent = pad(Math.floor(sec % 3600 / 60));
+    document.getElementById('cd-s').textContent = pad(sec % 60);
+  }
+  var t = setInterval(tick, 1000); tick();
+
+  // registration
+  var form = document.getElementById('diwali-form');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var status = document.getElementById('reg-status');
+    status.classList.remove('err');
+    if (!form.checkValidity()) { form.reportValidity(); status.textContent = 'Please fill in the fields marked *.'; status.classList.add('err'); return; }
+    var data = {};
+    new FormData(form).forEach(function (v, k) { data[k] = v; });
+    data._template = 'table'; data._captcha = 'false';
+    var btn = document.getElementById('reg-btn'); btn.disabled = true; btn.textContent = 'Registering…';
+    fetch(EMAIL_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
+      .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === 'false') throw new Error('fail'); }); })
+      .then(function () {
+        var name = (data.Name || '').split(' ')[0].replace(/[<>&"]/g, '');
+        var msg = encodeURIComponent('Hi Chanakian! I just registered for the Diwali workshop "AI for Passive Income" on 7 Nov, 7–8 PM. Name: ' + data.Name + '. Please share the payment link for ₹299.');
+        var pay = PAYMENT_URL ? '<a class="btn btn-gold" href="' + PAYMENT_URL + '" target="_blank" rel="noopener">Pay ₹299 now</a>' : '';
+        form.innerHTML = '<div class="done"><span class="kicker">YOU\'RE ON THE LIST</span><h3>THANK YOU' + (name ? ', ' + name.toUpperCase() : '') + '!</h3>' +
+          '<p>Your registration has reached Chanakian. To confirm your seat, complete the ₹299 payment. Chanakian will be in touch with you shortly on WhatsApp with the payment and session links.</p>' +
+          '<div class="cta-row">' + pay + '<a class="btn ' + (PAYMENT_URL ? 'btn-line' : 'btn-gold') + '" href="https://wa.me/' + WHATSAPP + '?text=' + msg + '" target="_blank" rel="noopener">Confirm on WhatsApp</a></div></div>';
+      })
+      .catch(function () {
+        btn.disabled = false; btn.textContent = 'Register for ₹299 ↗';
+        status.innerHTML = 'Something went wrong. Please try again or <a href="https://wa.me/' + WHATSAPP + '" target="_blank" rel="noopener" style="color:#FF8A8E">message me on WhatsApp</a>.';
+        status.classList.add('err');
+      });
+  });
+})();
+</script>
+</body>
+</html>

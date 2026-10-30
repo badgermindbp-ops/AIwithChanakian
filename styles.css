@@ -75,7 +75,8 @@ html{scroll-behavior:smooth}
   .hero-stage .rise{top:20px!important}
   .hero-stage .rise h1{font-size:17.5vw!important;letter-spacing:0!important;max-width:100%}
   .hero-stage .rise span{font-size:12px!important;letter-spacing:5px!important}
-  .hero-stage .lift{height:calc(100% - 17vw - 64px)!important;max-width:100%;object-fit:contain;object-position:bottom}
-  .hero-stage .pop{top:62%!important;width:78vw!important}
+  .hero-stage .rise > div{flex-direction:column-reverse!important;gap:4px!important}
+  .hero-stage .lift{height:calc(100% - 4.5vw - 44px)!important;max-width:100%;object-fit:contain;object-position:bottom}
+  .hero-stage .pop{top:56%!important;width:80vw!important}
   #home > div:first-child{gap:6px 16px!important;letter-spacing:2px!important;font-size:11px!important}
 }

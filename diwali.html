@@ -277,7 +277,8 @@ footer{border-top:1px dashed #2E2E2E;padding:24px 0;font-size:12px;color:#8C8C8C
   /* ===== Edit these when needed ===== */
   var EVENT_START = new Date('2026-11-07T19:00:00+05:30');
   var SEATS_LEFT = 10;          // update manually as seats fill up
-var WHATSAPP = '918056327917';
+  var WHATSAPP = '918056327917';
+  var EMAIL_ENDPOINT = 'https://formsubmit.co/ajax/chanakian.p@gmail.com'; // payment alert email
   /* Payment: Razorpay Payment Button pl_TuCRYGZaX5U4Cm (stock 10). After payment Razorpay redirects to diwali.html?paid=1 */
   /* ================================== */
   var PAID = /[?&]paid=1/.test(location.search);
@@ -314,6 +315,19 @@ var WHATSAPP = '918056327917';
 
   // after payment: Razorpay sends the buyer back to diwali.html?paid=1
   if (PAID) {
+    // email alert to Chanakian, sent once per buyer's browser
+    var sent = false; try { sent = sessionStorage.getItem('dw-paid-mail') === '1'; } catch (e) {}
+    if (!sent) {
+      var info = { _subject: 'New Diwali workshop payment: ₹299 seat booked', _template: 'table', _captcha: 'false',
+        Event: 'Diwali workshop, Sat 7 Nov, 7-8 PM IST',
+        Status: 'A buyer completed the Razorpay payment and reached the seat-confirmed page',
+        Time: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+        'Buyer details': 'Razorpay dashboard > Payment Buttons > Diwali AI Workshop 7 Nov 2026 (name, email, phone)' };
+      try { new URLSearchParams(location.search).forEach(function (v, k) { if (k !== 'paid') info[k] = v; }); } catch (e) {}
+      fetch(EMAIL_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(info) })
+        .then(function () { try { sessionStorage.setItem('dw-paid-mail', '1'); } catch (e) {} })
+        .catch(function () {});
+    }
     var msg = encodeURIComponent('Hi Chanakian! I just paid ₹299 for the Diwali workshop "AI for Passive Income" on 7 Nov, 7–8 PM. My name is ');
     document.getElementById('pay-box').innerHTML = '<div class="done"><span class="kicker">PAYMENT RECEIVED</span><h3>YOUR SEAT IS CONFIRMED! 🪔</h3>' +
       '<p>Thank you for joining the Diwali workshop on Sat, 7 Nov, 7–8 PM IST. Your Razorpay receipt is on its way to your email. The joining link will reach you on WhatsApp and email before the session.</p>' +

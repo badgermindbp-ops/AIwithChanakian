@@ -1,4 +1,8 @@
+<p align="center"><img src="logo-mark-round.svg" alt="AI with Chanakian logo" width="120"></p>
+
 # AI with Chanakian
+
+Live at **[aiwithchanakian.com](https://aiwithchanakian.com)**
 
 Landing page for **AI with Chanakian**: personal AI guidance for non-tech people.
 

@@ -16,6 +16,87 @@
 <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
+<!-- Diwali workshop promo: announcement bar + pop-up -->
+<style>
+.dw-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 14px;padding:10px 16px;background:#F5B301;color:#0A0A0A;font:600 13px 'Inter',sans-serif;text-align:center;text-decoration:none;letter-spacing:.3px}
+.dw-bar b{font-family:'Anton',sans-serif;font-weight:400;font-size:15px;letter-spacing:1px}
+.dw-bar span.go{background:#0A0A0A;color:#F5B301;border-radius:999px;padding:5px 12px;font-weight:700}
+.dw-pop{width:min(560px,calc(100vw - 28px));padding:0;border:1px solid #3A2E10;border-radius:26px;background:#0F0D08;color:#F5F5F5;box-shadow:0 30px 90px rgba(0,0,0,.7);overflow:hidden}
+.dw-pop::backdrop{background:rgba(5,5,5,.8);backdrop-filter:blur(4px)}
+.dw-pop[open]{animation:dwIn .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes dwIn{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:none}}
+.dw-lights{display:flex;justify-content:space-between;padding:10px 14px 0;height:28px}
+.dw-lights i{width:8px;height:12px;border-radius:50%;background:#F5B301;box-shadow:0 0 9px 2px rgba(245,179,1,.7);animation:dwTw 1.8s ease-in-out infinite}
+.dw-lights i:nth-child(3n){background:#E3262E;box-shadow:0 0 9px 2px rgba(227,38,46,.7);animation-delay:.6s}
+.dw-lights i:nth-child(3n+1){background:#FF8A1F;box-shadow:0 0 9px 2px rgba(255,138,31,.7);animation-delay:1.2s}
+.dw-lights i:nth-child(even){margin-top:6px}
+@keyframes dwTw{50%{opacity:.3}}
+.dw-body{padding:14px 30px 30px;display:flex;flex-direction:column;gap:16px;font-family:'Inter',sans-serif}
+.dw-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.dw-close{flex:none;width:44px;height:44px;border-radius:22px;border:1px solid #3A3A3A;background:none;color:#F5F5F5;font-size:16px;cursor:pointer}
+.dw-kick{font-size:12px;font-weight:700;letter-spacing:3px;color:#F5B301}
+.dw-title{margin:6px 0 0;font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(36px,8vw,52px);line-height:.95}
+.dw-title em{font-style:normal;color:#F5B301}
+.dw-sub{margin:0;font-size:15px;line-height:1.55;color:#CFCFCF}
+.dw-chips{display:flex;flex-wrap:wrap;gap:8px}
+.dw-chips span{padding:7px 12px;border-radius:999px;border:1px solid #3A3A3A;font-size:12px;font-weight:600}
+.dw-chips span.hot{background:#E3262E;border-color:#E3262E}
+.dw-count{display:flex;gap:8px}
+.dw-count div{flex:1;padding:10px 6px;border-radius:14px;background:#1A160C;border:1px solid #2E2612;text-align:center}
+.dw-count strong{display:block;font-family:'Anton',sans-serif;font-weight:400;font-size:28px;line-height:1}
+.dw-count small{font-size:10px;font-weight:700;letter-spacing:1.4px;color:#B5B5B5}
+.dw-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.dw-cta{display:inline-flex;align-items:center;height:54px;padding:0 26px;border-radius:999px;background:#F5B301;color:#0A0A0A;font-weight:700;font-size:16px;text-decoration:none}
+.dw-later{background:none;border:none;color:#B5B5B5;font:600 14px 'Inter',sans-serif;cursor:pointer;text-decoration:underline;text-underline-offset:4px;min-height:44px}
+.dw-diya{width:64px;flex:none;filter:drop-shadow(0 0 16px rgba(255,170,30,.6))}
+.dw-diya .fl{transform-origin:60px 58px;animation:dwFl 1.4s ease-in-out infinite}
+@keyframes dwFl{0%,100%{transform:scale(1) rotate(-2deg)}50%{transform:scale(1.08,.94) rotate(3deg)}}
+@media (prefers-reduced-motion:reduce){.dw-pop[open],.dw-lights i,.dw-diya .fl{animation:none}}
+</style>
+<a class="dw-bar" id="dw-bar" href="diwali.html"><b>DIWALI SPECIAL</b> AI for Passive Income · Sat 7 Nov, 7–8 PM · ₹299 · Only 10 seats <span class="go">Reserve →</span></a>
+<dialog class="dw-pop" id="dw-pop" aria-labelledby="dw-title">
+<div class="dw-lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="dw-body">
+<div class="dw-top">
+<div>
+<span class="dw-kick">DIWALI SPECIAL · LIVE ONLINE</span>
+<h2 class="dw-title" id="dw-title">LIGHT UP A <em>SECOND INCOME</em> THIS DIWALI</h2>
+</div>
+<button type="button" class="dw-close" id="dw-close" aria-label="Close">✕</button>
+</div>
+<div style="display:flex;gap:14px;align-items:center">
+<svg class="dw-diya" viewBox="0 0 120 110" aria-hidden="true"><g class="fl"><path d="M60 8 C72 26 74 40 60 58 C46 40 48 26 60 8 Z" fill="#FFC42E"/><path d="M60 26 C66 36 66 44 60 54 C54 44 54 36 60 26 Z" fill="#FFF3C4"/></g><path d="M8 66 Q60 58 112 66 Q104 100 60 102 Q16 100 8 66 Z" fill="#E3262E"/><path d="M8 66 Q60 74 112 66" fill="none" stroke="#F5B301" stroke-width="5"/></svg>
+<p class="dw-sub">A 1-hour live workshop: start a passive income with <b>free AI tools</b>, without spending a rupee. Simple Tamil and English, no tech skills needed.</p>
+</div>
+<div class="dw-chips"><span>SAT, 7 NOV</span><span>7–8 PM IST</span><span>₹299</span><span class="hot">ONLY 10 SEATS</span></div>
+<div class="dw-count" role="timer" aria-label="Time left until the workshop"><div><strong id="dw-d">--</strong><small>DAYS</small></div><div><strong id="dw-h">--</strong><small>HRS</small></div><div><strong id="dw-m">--</strong><small>MINS</small></div><div><strong id="dw-s">--</strong><small>SECS</small></div></div>
+<div class="dw-actions"><a class="dw-cta" href="diwali.html">See details &amp; register →</a><button type="button" class="dw-later" id="dw-later">Maybe later</button></div>
+</div>
+</dialog>
+<script>
+(function () {
+  var START = new Date('2026-11-07T19:00:00+05:30');
+  var bar = document.getElementById('dw-bar'), pop = document.getElementById('dw-pop');
+  if (new Date() >= START) { bar.remove(); pop.remove(); return; }
+  function pad(x) { return (x < 10 ? '0' : '') + x; }
+  function tick() {
+    var s = Math.max(0, Math.floor((START - new Date()) / 1000));
+    document.getElementById('dw-d').textContent = pad(Math.floor(s / 86400));
+    document.getElementById('dw-h').textContent = pad(Math.floor(s % 86400 / 3600));
+    document.getElementById('dw-m').textContent = pad(Math.floor(s % 3600 / 60));
+    document.getElementById('dw-s').textContent = pad(s % 60);
+  }
+  tick(); setInterval(tick, 1000);
+  function close() { pop.close(); try { sessionStorage.setItem('dwSeen', '1'); } catch (e) {} }
+  document.getElementById('dw-close').addEventListener('click', close);
+  document.getElementById('dw-later').addEventListener('click', close);
+  pop.addEventListener('click', function (e) { if (e.target === pop) close(); });
+  var seen = false; try { seen = sessionStorage.getItem('dwSeen') === '1'; } catch (e) {}
+  if (!seen && pop.showModal) setTimeout(function () { if (!document.querySelector('dialog[open]')) pop.showModal(); }, 3500);
+})();
+</script>
+<!-- /Diwali workshop promo -->
+
 <div style="min-height: 100vh; background: #0A0A0A; color: #F5F5F5; font-family: 'Inter', system-ui, sans-serif">
 
 <header style="max-width: 1360px; margin: 0 auto; padding: 22px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">

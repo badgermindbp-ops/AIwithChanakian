@@ -48,34 +48,40 @@
 .dw-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
 .dw-cta{display:inline-flex;align-items:center;height:54px;padding:0 26px;border-radius:999px;background:#F5B301;color:#0A0A0A;font-weight:700;font-size:16px;text-decoration:none}
 .dw-later{background:none;border:none;color:#B5B5B5;font:600 14px 'Inter',sans-serif;cursor:pointer;text-decoration:underline;text-underline-offset:4px;min-height:44px}
-.dw-diya{width:64px;flex:none;filter:drop-shadow(0 0 16px rgba(255,170,30,.6))}
+.dw-diya{width:48px;flex:none;filter:drop-shadow(0 0 16px rgba(255,170,30,.6))}
+.dw-photo{flex:none;width:104px;height:auto;border-radius:0 0 14px 14px;background:radial-gradient(circle at 50% 40%,rgba(255,138,31,.45),transparent 70%);filter:drop-shadow(0 10px 20px rgba(0,0,0,.5))}
+@media (max-width:480px){.dw-photo{width:80px}.dw-diya{display:none}.dw-body{padding:10px 20px 22px;gap:12px}.dw-title{font-size:34px}}
+.dw-pop{max-height:calc(100dvh - 24px);overflow-y:auto}
 .dw-diya .fl{transform-origin:60px 58px;animation:dwFl 1.4s ease-in-out infinite}
 @keyframes dwFl{0%,100%{transform:scale(1) rotate(-2deg)}50%{transform:scale(1.08,.94) rotate(3deg)}}
 @media (prefers-reduced-motion:reduce){.dw-pop[open],.dw-lights i,.dw-diya .fl{animation:none}}
 </style>
-<a class="dw-bar" id="dw-bar" href="diwali.html"><b>DIWALI SPECIAL</b> AI for Passive Income · Sat 7 Nov, 7–8 PM · ₹299 · Only 10 seats <span class="go">Reserve →</span></a>
+<a class="dw-bar" id="dw-bar" href="diwali.html"><b>DIWALI SPECIAL</b> AI Co-Founder Workshop · Fri 6 Nov, 8–9 PM · ₹299 · Only 10 seats <span class="go">Reserve →</span></a>
 <dialog class="dw-pop" id="dw-pop" aria-labelledby="dw-title">
 <div class="dw-lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 <div class="dw-body">
 <div class="dw-top">
 <div>
-<span class="dw-kick">DIWALI SPECIAL · LIVE ONLINE</span>
-<h2 class="dw-title" id="dw-title">LIGHT UP A <em>SECOND INCOME</em> THIS DIWALI</h2>
+<span class="dw-kick">DIWALI SPECIAL · LIVE ON ZOOM</span>
+<h2 class="dw-title" id="dw-title">NEED A <em>CO-FOUNDER</em> FOR YOUR BUSINESS?</h2>
 </div>
 <button type="button" class="dw-close" id="dw-close" aria-label="Close">✕</button>
 </div>
-<div style="display:flex;gap:14px;align-items:center">
+<div style="display:flex;gap:16px;align-items:flex-end">
+<img class="dw-photo" src="chanakian-diwali.webp" alt="Chanakian, workshop host" width="104" height="180">
+<div style="display:flex;flex-direction:column;gap:10px">
 <svg class="dw-diya" viewBox="0 0 120 110" aria-hidden="true"><g class="fl"><path d="M60 8 C72 26 74 40 60 58 C46 40 48 26 60 8 Z" fill="#FFC42E"/><path d="M60 26 C66 36 66 44 60 54 C54 44 54 36 60 26 Z" fill="#FFF3C4"/></g><path d="M8 66 Q60 58 112 66 Q104 100 60 102 Q16 100 8 66 Z" fill="#E3262E"/><path d="M8 66 Q60 74 112 66" fill="none" stroke="#F5B301" stroke-width="5"/></svg>
-<p class="dw-sub">A 1-hour live workshop: start a passive income with <b>free AI tools</b>, without spending a rupee. Simple Tamil and English, no tech skills needed.</p>
+<p class="dw-sub"><b>No salary. No leave. Works 24/7.</b> In 1 live hour, set up an AI Co-Founder that drafts your posts, analyses your sales, finds cost leakage and builds simple dashboards. For small business owners, in Tamil and English. No coding needed.</p>
 </div>
-<div class="dw-chips"><span>SAT, 7 NOV</span><span>7–8 PM IST</span><span>₹299</span><span class="hot">ONLY 10 SEATS</span></div>
+</div>
+<div class="dw-chips"><span>FRI, 6 NOV</span><span>8–9 PM IST</span><span>₹299</span><span class="hot">ONLY 10 SEATS</span></div>
 <div class="dw-count" role="timer" aria-label="Time left until the workshop"><div><strong id="dw-d">--</strong><small>DAYS</small></div><div><strong id="dw-h">--</strong><small>HRS</small></div><div><strong id="dw-m">--</strong><small>MINS</small></div><div><strong id="dw-s">--</strong><small>SECS</small></div></div>
 <div class="dw-actions"><a class="dw-cta" href="diwali.html">See details &amp; register →</a><button type="button" class="dw-later" id="dw-later">Maybe later</button></div>
 </div>
 </dialog>
 <script>
 (function () {
-  var START = new Date('2026-11-07T19:00:00+05:30');
+  var START = new Date('2026-11-06T20:00:00+05:30');
   var bar = document.getElementById('dw-bar'), pop = document.getElementById('dw-pop');
   if (new Date() >= START) { bar.remove(); pop.remove(); return; }
   function pad(x) { return (x < 10 ? '0' : '') + x; }
@@ -92,7 +98,7 @@
   document.getElementById('dw-later').addEventListener('click', close);
   pop.addEventListener('click', function (e) { if (e.target === pop) close(); });
   var seen = false; try { seen = sessionStorage.getItem('dwSeen') === '1'; } catch (e) {}
-  if (!seen && pop.showModal) setTimeout(function () { if (!document.querySelector('dialog[open]')) pop.showModal(); }, 3500);
+  if (!seen && pop.showModal) setTimeout(function () { if (!document.querySelector('dialog[open]')) pop.showModal(); }, 1500);
 })();
 </script>
 <!-- /Diwali workshop promo -->
@@ -106,6 +112,7 @@
 <span style="background: #E3262E; color: #FFFFFF; padding: 4px 8px">CHANAKIAN</span>
 </a>
 <nav aria-label="Sections" style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 12px; font-weight: 600; letter-spacing: 1.6px">
+<a href="diwali.html" style="color: #F5B301; text-decoration: none">DIWALI WORKSHOP</a>
 <a href="#how" style="color: #C9C9C9; text-decoration: none">HOW IT WORKS</a>
 <a href="#paths" style="color: #C9C9C9; text-decoration: none">PATHS</a>
 <a href="#offers" style="color: #C9C9C9; text-decoration: none">OFFERS</a>

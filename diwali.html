@@ -28,7 +28,7 @@ a{color:var(--gold)}
 .btn-red{background:var(--red);color:#fff;box-shadow:0 8px 30px rgba(227,38,46,.35)}
 .btn-dark{background:var(--bg);color:#fff}
 .btn-line{border:1px solid var(--gold);color:var(--ink);background:none}
-.chip{padding:10px 16px;border-radius:999px;border:1px solid #4A3A2A;background:rgba(244,182,63,.06);font-size:14px;font-weight:600}
+.chip{padding:8px 14px;border-radius:999px;border:1px solid #4A3A2A;background:rgba(244,182,63,.06);font-size:14px;font-weight:600}
 section{position:relative}
 .pad{padding:80px 0}
 .toran{display:block;width:100%;height:46px}
@@ -45,30 +45,31 @@ section{position:relative}
 .flame{transform-box:fill-box;transform-origin:50% 100%;animation:flicker 1.6s ease-in-out infinite}
 @keyframes flicker{0%,100%{transform:scale(1,1)}35%{transform:scale(.92,1.12)}70%{transform:scale(1.05,.94)}}
 .bar{display:block;background:linear-gradient(90deg,#B7141B,var(--red) 40%,#E5541F);color:#fff;text-decoration:none;text-align:center;font-size:13px;font-weight:700;letter-spacing:1.2px;padding:10px 16px}
-header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-top:18px;padding-bottom:6px;z-index:3}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:0;z-index:3}
 .logo{display:inline-flex;font-family:Anton,sans-serif;font-size:18px;letter-spacing:1px;text-decoration:none}
 .logo span:first-child{background:var(--ink);color:var(--bg);padding:4px 8px}
 .logo span:last-child{background:var(--red);color:#fff;padding:4px 8px}
 .hero{position:relative;overflow:hidden;background:radial-gradient(ellipse 60% 70% at 78% 55%,rgba(255,138,31,.22),transparent 60%),radial-gradient(ellipse 50% 50% at 10% 20%,rgba(227,38,46,.14),transparent 60%)}
-.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:32px;align-items:end;padding:36px 24px 0;position:relative;z-index:2}
-.hero h1{font-size:clamp(52px,7vw,100px)}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;padding:20px 24px 28px;position:relative;z-index:2}
+.hero h1{font-size:clamp(44px,5.4vw,80px)}
 .hero h1 em{font-style:normal;color:var(--gold);white-space:nowrap}
-.tamil{font-size:clamp(22px,2.4vw,30px);font-weight:800;margin:18px 0 0}
-.lead{font-size:20px;color:var(--soft);max-width:620px;margin:16px 0 0}
+.tamil{font-size:clamp(20px,2vw,26px);font-weight:800;margin:12px 0 0}
+.lead{font-size:18px;color:var(--soft);max-width:620px;margin:12px 0 0}
 .lead strong{color:var(--ink)}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.count{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:440px;margin-top:26px;text-align:center}
-.count div{border:1px solid #4A3A2A;background:rgba(20,17,16,.8);border-radius:16px;padding:12px 4px}
-.count b{display:block;font-family:Anton,sans-serif;font-size:34px;font-weight:400;line-height:1;color:var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.act{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:18px}
+.count{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;width:300px;text-align:center}
+.count div{border:1px solid #4A3A2A;background:rgba(20,17,16,.8);border-radius:14px;padding:8px 4px}
+.count b{display:block;font-family:Anton,sans-serif;font-size:28px;font-weight:400;line-height:1;color:var(--gold)}
 .count small{font-size:11px;font-weight:700;letter-spacing:1.4px;color:var(--mute)}
-.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin:26px 0 56px}
+.cta-row{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
 .seatline{font-size:15px;color:var(--soft)}
 .seatline b{color:var(--gold)}
-.photo{position:relative;align-self:end;display:flex;justify-content:center;min-height:520px;overflow:visible}
-.photo .rangoli{position:absolute;width:118%;max-width:620px;left:50%;top:6%;transform:translateX(-50%);opacity:.55;animation:spin 120s linear infinite}
+.photo{position:relative;align-self:center;display:flex;justify-content:center;align-items:flex-start;overflow:visible}
+.photo .rangoli{position:absolute;width:112%;max-width:560px;left:50%;top:0;transform:translateX(-50%);opacity:.55;animation:spin 120s linear infinite}
 @keyframes spin{to{transform:translateX(-50%) rotate(360deg)}}
-.photo img{position:relative;z-index:1;width:100%;max-width:380px;height:auto;display:block;filter:drop-shadow(0 20px 40px rgba(0,0,0,.6))}
-.photo .tag{position:absolute;z-index:2;left:0;bottom:70px;background:var(--bg);border:1px solid var(--gold);border-radius:16px;padding:12px 16px}
+.photo img{position:relative;z-index:1;width:auto;max-width:100%;height:clamp(380px,calc(100vh - 190px),620px);object-fit:contain;display:block;filter:drop-shadow(0 20px 40px rgba(0,0,0,.6))}
+.photo .tag{position:absolute;z-index:2;left:0;bottom:12%;background:var(--bg);border:1px solid var(--gold);border-radius:16px;padding:12px 16px}
 .photo .tag b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:24px;letter-spacing:.5px}
 .photo .tag span{font-size:13px;color:var(--mute)}
 .hero-base{position:relative;z-index:2;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
@@ -117,7 +118,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 .wa{position:fixed;right:18px;bottom:18px;z-index:50;display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 20px 0 16px;border-radius:999px;background:#25D366;color:#0A0A0A;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.45)}
 @media (max-width:900px){
   .hero-grid,.two,.about{grid-template-columns:1fr}
-  .photo{min-height:0;width:100%;max-width:380px;margin:0 auto}
+  .photo{width:100%;max-width:380px;margin:0 auto}
+  .photo img{height:auto;width:100%}
   .photo .tag{bottom:40px}
   .cta-row{margin-bottom:24px}
   .price .amt{font-size:92px}
@@ -162,6 +164,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         <span class="chip">Live on Zoom</span>
         <span class="chip">Tamil + English</span>
       </div>
+      <div class="act">
       <div class="count" aria-live="polite">
         <div><b id="cd-d">0</b><small>DAYS</small></div>
         <div><b id="cd-h">0</b><small>HRS</small></div>
@@ -171,6 +174,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <div class="cta-row">
         <a class="btn btn-red" href="#reserve">Reserve my seat · ₹299</a>
         <span class="seatline">Only <b><span class="js-left">10</span> of 10</b> seats left</span>
+      </div>
       </div>
     </div>
     <div class="photo">

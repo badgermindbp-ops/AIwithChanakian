@@ -2,6 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GXYQ0K00ZY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GXYQ0K00ZY');
+  // Lead tracking: WhatsApp and Calendly clicks
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var label = (a.textContent || '').trim().slice(0, 60);
+    if (a.href.indexOf('wa.me/') > -1) gtag('event', 'whatsapp_click', { link_text: label });
+    else if (a.href.indexOf('calendly.com/') > -1) gtag('event', 'book_call_click', { link_text: label });
+  });
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI with Chanakian – Make AI your Coworker and Co-Founder</title>
 <meta name="description" content="Chanakian is a personal AI guide for non-tech people. 10+ years in sales. AI as your Coworker for employees, AI as your Co-Founder for small business owners. Tamil + English.">
@@ -423,6 +439,7 @@ NOW TAKING CLIENTS
       fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
         .then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === 'false') throw new Error(j.message || 'Failed'); }); })
         .then(function () {
+          if (window.gtag) gtag('event', 'generate_lead', { form_id: form.closest('dialog') ? form.closest('dialog').id : '' });
           var name = (data.Name || '').split(' ')[0];
           form.outerHTML = '<div class="lead-done"><div class="tick"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></div>' +
             '<h2>THANK YOU' + (name ? ', ' + name.replace(/[<>&"]/g, '').toUpperCase() : '') + '!</h2>' +
